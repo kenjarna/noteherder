@@ -7,11 +7,11 @@ const Note = (props) =>{
             <li>
                 <div className="note">
                     <div className="note-title">
-                        {props.note.title}
+                        {props.notes.title}
                     </div>
                     <div className="note-body">
                     <p>
-                        {props.note.body}
+                        {props.notes.body}
                     </p>
                     </div>
                 </div>
