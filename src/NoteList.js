@@ -4,24 +4,27 @@ import './NoteList.css'
 import Note from './Note'
 
 const NoteList = () => {
-    const notes = [
-      {
+    const notes = {
+      'note-4': {
         id: 'note-4',
-        title: 'My Fancy Note',
-        body: 'Fancy as shit',
+        title: 'Note from obj',
+        body: 'Get some',
       },
-      {
+      'note-5': {
         id: 'note-5',
-        title: 'Take 2',
+        title: 'Key to success',
         body: 'Another one',
-      }
-    ]
+      },
+    }
+    
+    //['note-4','note-5']
+    const noteIds = Object.keys(notes)
 
     return (
         <div className="NoteList">
           <h3>Notes</h3>
           <ul id="notes">
-            {notes.map(note => <Note notes={note}/>)}
+            {noteIds.map(noteId => <Note notes={notes[noteId]}/>)}
             
           </ul>
         </div>
