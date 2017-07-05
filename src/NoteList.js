@@ -12,7 +12,7 @@ const NoteList = (props) => {
           <h3>Notes</h3>
           <ul id="notes">
             {noteIds.map(noteId => (
-              <Note notes={props.notes[noteId]}/>
+              <Note notes={props.notes[noteId]} key={noteId}/>
             ))}
             
           </ul>
