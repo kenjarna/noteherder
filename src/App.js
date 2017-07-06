@@ -1,16 +1,26 @@
 import React, { Component } from 'react'
 import './App.css'
 import Main from './Main'
+import base from './base'
 
 class App extends Component {
     constructor () {
         super()
 
-
         this.state = {
             notes: {},
             currentNote: this.blankNote(),
         }
+    }
+
+    componentDidMount = () => {
+        base.syncState(
+            'notes',
+            {
+                context: this,
+                state: 'notes',
+            }
+        )
     }
 
     blankNote = () => {
