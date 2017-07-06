@@ -17,8 +17,8 @@ class App extends Component {
         base.syncState(
             'notes',
             {
-                context: this,
-                state: 'notes',
+                context: this, //what object the state is on
+                state: 'notes', //which property to sync
             }
         )
     }
