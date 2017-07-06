@@ -1,26 +1,26 @@
 import React from 'react'
 
-const Note = (props) => {
-    const handleClick = (ev) => {
-        console.log('clicked')
-    }
+const Note = ({ note, setCurrentNote }) => {
+  const handleClick = () => {
+    setCurrentNote(note)
+  }
 
-    return (
-        <a onClick={handleClick}>
-            <li>
-                <div className="note">
-                    <div className="note-title">
-                        {props.notes.title}
-                    </div>
-                    <div className="note-body">
-                    <p>
-                        {props.notes.body}
-                    </p>
-                    </div>
-                </div>
-            </li>
-        </a>
-    )
+  return (
+    <a onClick={handleClick}>
+      <li>
+        <div className="note">
+          <div className="note-title">
+            {note.title}
+          </div>
+          <div className="note-body">
+            <p>
+              {note.body}
+            </p>
+          </div>
+        </div>
+      </li>
+    </a>
+  )
 }
 
 export default Note
