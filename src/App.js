@@ -8,31 +8,21 @@ class App extends Component {
 
 
         this.state = {
-            notes: {
-                'note-4': {
-                    id: 'note-4',
-                    title: 'Note from obj',
-                    body: 'Doope',
-                },
-                'note-5': {
-                    id: 'note-5',
-                    title: 'Key to success',
-                    body: 'Cool as hell maaine',
-                },
-            },
+            notes: {},
             currentNote: this.blankNote(),
         }
     }
 
     blankNote = () => {
         return {
-            id: null,
-            title: '',
-            body: '',
+        id: null,
+        title: '',
+        body: '',
         }
     }
+
     setCurrentNote = (note) => {
-        this.setState({currentNote: note})
+        this.setState({ currentNote: note })
     }
 
     resetCurrentNote = () => {
@@ -42,18 +32,29 @@ class App extends Component {
     saveNote = (note) => {
         const notes = {...this.state.notes}
         if (!note.id) {
-            note.id = Date.now()
+        note.id = Date.now()
         }
         notes[note.id] = note
-        
-        this.setState({ notes }) // same as {notes:notes}
-        this.setCurrentNote(note) //this displays in the form
+
+        this.setState({ notes }) //same as {notes:notes}
+        this.setCurrentNote(note) //this will be displayed in the form
     }
+
+    removeCurrentNote = () => {
+        const notes = {...this.state.notes}
+        delete notes[this.state.currentNote.id]
+
+        this.setState({ notes })
+        this.resetCurrentNote()
+    }
+
+
     render() {
         const actions = {
             setCurrentNote: this.setCurrentNote,
             resetCurrentNote: this.resetCurrentNote,
             saveNote: this.saveNote,
+            removeCurrentNote: this.removeCurrentNote,
         }
         return (
         < div className = "App" >
