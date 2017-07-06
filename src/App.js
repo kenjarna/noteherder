@@ -38,10 +38,22 @@ class App extends Component {
     resetCurrentNote = () => {
         this.setCurrentNote(this.blankNote())
     }
+
+    saveNote = (note) => {
+        const notes = {...this.state.notes}
+        if (!note.id) {
+            note.id = Date.now()
+        }
+        notes[note.id] = note
+        
+        this.setState({ notes }) // same as {notes:notes}
+        this.setCurrentNote(note) //this displays in the form
+    }
     render() {
         const actions = {
             setCurrentNote: this.setCurrentNote,
             resetCurrentNote: this.resetCurrentNote,
+            saveNote: this.saveNote,
         }
         return (
         < div className = "App" >

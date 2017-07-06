@@ -14,7 +14,6 @@ const Sidebar = ({ resetCurrentNote }) => {
           </div>
           <a 
             className="new-note" 
-            href="/notes"
             onClick={resetCurrentNote}
           >
             <img src={newHover} alt="New note" />
