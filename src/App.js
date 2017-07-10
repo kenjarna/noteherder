@@ -15,6 +15,18 @@ class App extends Component {
       uid: null,
     }
   }
+  componentWillMount = () => {
+    auth.onAuthStateChanged(
+        (user) => {
+            if (user) {
+                //signed in
+                this.handleAuth(user)
+            }else {
+                //signed out
+                this.setState({ uid: null })
+            }
+        })
+  }
 
   componentDidMount = () => {
     base.syncState(
@@ -65,14 +77,12 @@ class App extends Component {
     return this.state.uid
   }
 
-  handleAuth = (result) => {
-    this.setState({ uid: result.user.uid })
+  handleAuth = (user) => {
+    this.setState({ uid: user.uid })
   }
 
   signOut = () => {
-    auth
-        .signOut()
-        .then(() => this.setState( {uid: null }))
+    auth.signOut()
   }
 
   render() {
@@ -94,7 +104,7 @@ class App extends Component {
         {
           this.signedIn()
           ? <Main {...noteData} {...actions} />
-          : <SignIn handleAuth={this.handleAuth} />
+          : <SignIn  />
         }
       </div>
     )
