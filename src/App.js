@@ -71,7 +71,7 @@ class App extends Component {
 
   signOut = () => {
     auth
-        .signOu()
+        .signOut()
         .then(() => this.setState( {uid: null }))
   }
 
