@@ -15,10 +15,10 @@ class NoteForm extends Component {
   componentWillReceiveProps = (nextProps) => {
     const idFromUrl = nextProps.match.params.id
     const note = nextProps.notes[idFromUrl] || this.blankNote()
-    
+
     const noteNotFound = idFromUrl && !note.id
     if (noteNotFound && nextProps.firebaseNotesSynced) {
-      this.props.history.push('/notes')
+      this.props.history.replace('/notes')
     }
     
     let editorValue = this.state.editorValue

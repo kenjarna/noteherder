@@ -44,17 +44,9 @@ class App extends Component {
       {
         context: this,  // what object the state is on
         state: 'notes', // which property to sync
-        then: () => this.setState( { firebaseNotesSynced: true })
+        then: () => this.setState({ firebaseNotesSynced: true })
       }
     )
-  }
-
-  setCurrentNote = (note) => {
-    this.setState({ currentNoteId: note.id })
-  }
-
-  resetCurrentNote = () => {
-    this.setCurrentNote({ id: null })
   }
 
   saveNote = (note) => {
@@ -69,7 +61,7 @@ class App extends Component {
 
     this.setState({ notes })
 
-    if(shouldRedirect){
+    if (shouldRedirect) {
       this.props.history.push(`/notes/${note.id}`)
     }
   }
@@ -79,7 +71,7 @@ class App extends Component {
     notes[note.id] = null
 
     this.setState({ notes })
-    this.props.history.push('/notes')
+    this.props.history.replace('/notes')
   }
 
   signedIn = () => {
@@ -96,7 +88,7 @@ class App extends Component {
 
   handleUnauth = () => {
     localStorage.removeItem('uid')
-    //Stop syncing
+
     if (this.bindingRef) {
       base.removeBinding(this.bindingRef)
     }
@@ -105,8 +97,6 @@ class App extends Component {
       uid: null,
       notes: {},
     })
-
-    this.resetCurrentNote()
   }
 
   signOut = () => {
