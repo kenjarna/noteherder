@@ -12,7 +12,6 @@ class App extends Component {
 
     this.state = {
       notes:  {},
-      currentNoteId: null,
       uid: null,
     }
   }
@@ -121,7 +120,6 @@ class App extends Component {
 
     const noteData = {
       notes: this.state.notes,
-      currentNoteId: this.state.currentNoteId,
     }
 
     return (
