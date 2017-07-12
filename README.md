@@ -6,6 +6,12 @@ Copy `src/base.example.js` to `src/base.js` and fill in your Firebase config det
 
 Run `yarn install` (or `npm install`) and `yarn start` (or `npm start`).
 
+### Deployment
+
+Run `yarn deploy` (or `npm run deploy`) to deploy the app to Firebase.
+
+**Note**: This requires the Firebase command-line tools to be installed. Run `npm install -g firebase-tools` to install them.
+
 ## Day 6 Homework
 
 * Load data in the form when a note is clicked in the list.
@@ -21,6 +27,18 @@ Run `yarn install` (or `npm install`) and `yarn start` (or `npm start`).
 ### Super Mega Bonus Credit Hyper Fighting
 
 * Make the "+" button in the sidebar clear out the form so a new note can be added.
+
+## Day 8 Homework
+
+* Add another authentication provider (like GitHub).
+
+## Day 10 Homework
+
+* Add an `updatedAt` field to notes (updating its value every time you save the note).
+
+### Super Mega Bonus Credit
+
+* Sort the notes in the list with the most recently updated at the top.
 
 --
 
