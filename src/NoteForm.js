@@ -34,17 +34,27 @@ class NoteForm extends Component {
       id: null,
       title: '',
       body: '',
+      Modified: false,
     }
   }
 
   handleChanges = (ev) => {
     const note = {...this.state.note}
+    const originalNote = {...this.state.note}
+
     note[ev.target.name] = ev.target.value
+
+
     this.setState(
       { note },
       () => this.props.saveNote(note)
     )
-    
+
+    if (note !== originalNote){
+      note.Modified = Date.now()
+    }
+    // console.log(originalNote)
+    // console.log(note)
   }
 
   handleEditorChanges = (editorValue) => {
@@ -54,7 +64,9 @@ class NoteForm extends Component {
       { note, editorValue },
       () => this.props.saveNote(note)
     )
+    this.setState({})
   }
+
 
   render() {
     return (

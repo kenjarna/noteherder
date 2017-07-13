@@ -68,7 +68,7 @@
   text-decoration: none !important;
 }
 .NoteList ul#notes li:hover .note,
-.NoteList ul#notes a.active li {
+.NoteList ul#notes a.active li .note {
   border-color: transparent;
 }
 .NoteList ul#notes li .note-title {
