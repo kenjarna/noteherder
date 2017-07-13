@@ -67,7 +67,7 @@ class NoteForm extends Component {
     )
     
     
-    if (note.body !== originalNote.body && note.body !== "<p><br></p>"){
+    if (note.body !== originalNote.body){
       note.Modified = Date.now()
     }
   }
