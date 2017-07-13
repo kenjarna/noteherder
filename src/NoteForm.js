@@ -53,18 +53,23 @@ class NoteForm extends Component {
     if (note !== originalNote){
       note.Modified = Date.now()
     }
-    // console.log(originalNote)
-    // console.log(note)
+
   }
 
   handleEditorChanges = (editorValue) => {
     const note = {...this.state.note}
+    const originalNote = {...this.state.note}
+
     note.body = editorValue.toString('html')
     this.setState(
       { note, editorValue },
       () => this.props.saveNote(note)
     )
-    this.setState({})
+    
+    
+    if (note.body !== originalNote.body && note.body !== "<p><br></p>"){
+      note.Modified = Date.now()
+    }
   }
 
 
