@@ -4,12 +4,12 @@ import database from 'firebase/database'
 import 'firebase/auth'
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyCLONm-T3SH_BP4cJmLGz9wU5vsxFgPgDs",
-    authDomain: "noteherder-f7bd7.firebaseapp.com",
-    databaseURL: "https://noteherder-f7bd7.firebaseio.com",
-    projectId: "noteherder-f7bd7",
-    storageBucket: "noteherder-f7bd7.appspot.com",
-    messagingSenderId: "577347323744"
+    apiKey: "AIzaSyC5gaYN-SEsqHrhCPwkYo5LtX6fjiFdRj8",
+    authDomain: "fooddelivery-5d1f3.firebaseapp.com",
+    databaseURL: "https://fooddelivery-5d1f3.firebaseio.com",
+    projectId: "fooddelivery-5d1f3",
+    storageBucket: "",
+    messagingSenderId: "594394249400"
   })
 
 const db = database(app)
