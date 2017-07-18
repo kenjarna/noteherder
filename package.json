@@ -1,13 +1,13 @@
 {
   "name": "noteherder",
-  "homepage": "https://noteherder-f7bd7.firebaseapp.com/",
+  "homepage": "https://fooddelivery-5d1f3.firebaseapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "re-base": "^3.0.2",
+    "re-base": "^3.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.1",
+    "react-router-dom": "^4.1.2",
     "react-rte": "^0.11.0"
   },
   "devDependencies": {
