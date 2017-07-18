@@ -16,7 +16,7 @@ class App extends Component {
       firebaseNotesSynced: false,
     }
   }
-
+  
   componentWillMount = () => {
     this.getUserFromLocalStorage()
     auth.onAuthStateChanged(
